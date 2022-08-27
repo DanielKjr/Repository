@@ -19,6 +19,9 @@ namespace Repository
 
         }
 
+        /// <summary>
+        /// Creates table used for Expense entries if the table doesn't exist.
+        /// </summary>
         private void CreateDBTable()
         {
             var cmd = new SQLiteCommand($"CREATE TABLE IF NOT EXISTS Expenses (Id INTEGER PRIMARY KEY, Name STRING, Cost REAL, Type INTEGER);", (SQLiteConnection)connection);
